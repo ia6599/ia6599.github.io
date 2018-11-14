@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="自定义播放器目标 独立完成自定义播放器处理浏览器表现不一致问题 独立查找API完成自定义播放器功能  知识内容api 音频和视频API一致  方法    方法 描述     addTextTrack() 向音频/视频添加新的文本轨道   canPlayType() 检测浏览器是否能播放指定的音频/视频类型   load() 重新加载音频/视频元素   play() 开始播放音频/视频   paus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/11/13/hello-world/index.html">
+<meta property="og:title" content="崔家丶聪少的博客">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/07-自定义播放器/index.html">
 <meta property="og:site_name" content="崔家丶聪少的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="自定义播放器目标 独立完成自定义播放器处理浏览器表现不一致问题 独立查找API完成自定义播放器功能  知识内容api 音频和视频API一致  方法    方法 描述     addTextTrack() 向音频/视频添加新的文本轨道   canPlayType() 检测浏览器是否能播放指定的音频/视频类型   load() 重新加载音频/视频元素   play() 开始播放音频/视频   paus">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-13T02:51:32.977Z">
+<meta property="og:updated_time" content="2018-03-07T03:40:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="崔家丶聪少的博客">
+<meta name="twitter:description" content="自定义播放器目标 独立完成自定义播放器处理浏览器表现不一致问题 独立查找API完成自定义播放器功能  知识内容api 音频和视频API一致  方法    方法 描述     addTextTrack() 向音频/视频添加新的文本轨道   canPlayType() 检测浏览器是否能播放指定的音频/视频类型   load() 重新加载音频/视频元素   play() 开始播放音频/视频   paus">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | 崔家丶聪少的博客</title>
+<title>崔家丶聪少的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -276,11 +276,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-07-自定义播放器" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/13/hello-world/" class="article-date">
-      <time datetime="2018-11-13T02:51:32.977Z" itemprop="datePublished">2018-11-13</time>
+      <a href="/2018/11/14/07-自定义播放器/" class="article-date">
+      <time datetime="2018-11-14T12:50:15.673Z" itemprop="datePublished">2018-11-14</time>
 </a>
 
 
@@ -291,36 +291,275 @@
       <input type="hidden" class="isFancy">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hello World
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="自定义播放器"><a href="#自定义播放器" class="headerlink" title="自定义播放器"></a>自定义播放器</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>独立完成自定义播放器处理浏览器表现不一致问题</li>
+<li>独立查找API完成自定义播放器功能</li>
+</ul>
+<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><blockquote>
+<p>音频和视频API一致</p>
+</blockquote>
+<p>方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addTextTrack()</td>
+<td>向音频/视频添加新的文本轨道</td>
+</tr>
+<tr>
+<td>canPlayType()</td>
+<td>检测浏览器是否能播放指定的音频/视频类型</td>
+</tr>
+<tr>
+<td>load()</td>
+<td>重新加载音频/视频元素</td>
+</tr>
+<tr>
+<td>play()</td>
+<td>开始播放音频/视频</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>暂停当前播放的音频/视频</td>
+</tr>
+</tbody>
+</table>
+<p>属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audioTracks</td>
+<td>返回表示可用音轨的 AudioTrackList 对象</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>设置或返回是否在加载完成后随即播放音频/视频</td>
+</tr>
+<tr>
+<td>buffered</td>
+<td>返回表示音频/视频已缓冲部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>返回表示音频/视频当前媒体控制器的 MediaController 对象</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>设置或返回音频/视频是否显示控件（比如播放/暂停等）</td>
+</tr>
+<tr>
+<td>crossOrigin</td>
+<td>设置或返回音频/视频的 CORS 设置</td>
+</tr>
+<tr>
+<td>currentSrc</td>
+<td>返回当前音频/视频的 URL</td>
+</tr>
+<tr>
+<td>currentTime</td>
+<td>设置或返回音频/视频中的当前播放位置（以秒计）</td>
+</tr>
+<tr>
+<td>defaultMuted</td>
+<td>设置或返回音频/视频默认是否静音</td>
+</tr>
+<tr>
+<td>defaultPlaybackRate</td>
+<td>设置或返回音频/视频的默认播放速度</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>返回当前音频/视频的长度（以秒计）</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>返回音频/视频的播放是否已结束</td>
+</tr>
+<tr>
+<td>error</td>
+<td>返回表示音频/视频错误状态的 MediaError 对象</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>设置或返回音频/视频是否应在结束时重新播放</td>
+</tr>
+<tr>
+<td>mediaGroup</td>
+<td>设置或返回音频/视频所属的组合（用于连接多个音频/视频元素）</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>设置或返回音频/视频是否静音</td>
+</tr>
+<tr>
+<td>networkState</td>
+<td>返回音频/视频的当前网络状态</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>设置或返回音频/视频是否暂停</td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>设置或返回音频/视频播放的速度</td>
+</tr>
+<tr>
+<td>played</td>
+<td>返回表示音频/视频已播放部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>设置或返回音频/视频是否应该在页面加载后进行加载</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>返回音频/视频当前的就绪状态</td>
+</tr>
+<tr>
+<td>seekable</td>
+<td>返回表示音频/视频可寻址部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>返回用户是否正在音频/视频中进行查找</td>
+</tr>
+<tr>
+<td>src</td>
+<td>设置或返回音频/视频元素的当前来源</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>返回表示当前时间偏移的 Date 对象</td>
+</tr>
+<tr>
+<td>textTracks</td>
+<td>返回表示可用文本轨道的 TextTrackList 对象</td>
+</tr>
+<tr>
+<td>videoTracks</td>
+<td>返回表示可用视频轨道的 VideoTrackList 对象</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>设置或返回音频/视频的音量</td>
+</tr>
+</tbody>
+</table>
+<p>事件</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abort</td>
+<td>当音频/视频的加载已放弃时</td>
+</tr>
+<tr>
+<td>canplay</td>
+<td>当浏览器可以播放音频/视频时</td>
+</tr>
+<tr>
+<td>canplaythrough</td>
+<td>当浏览器可在不因缓冲而停顿的情况下进行播放时</td>
+</tr>
+<tr>
+<td>durationchange</td>
+<td>当音频/视频的时长已更改时</td>
+</tr>
+<tr>
+<td>emptied</td>
+<td>当目前的播放列表为空时</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>当目前的播放列表已结束时</td>
+</tr>
+<tr>
+<td>error</td>
+<td>当在音频/视频加载期间发生错误时</td>
+</tr>
+<tr>
+<td>loadeddata</td>
+<td>当浏览器已加载音频/视频的当前帧时</td>
+</tr>
+<tr>
+<td>loadedmetadata</td>
+<td>当浏览器已加载音频/视频的元数据时</td>
+</tr>
+<tr>
+<td>loadstart</td>
+<td>当浏览器开始查找音频/视频时</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>当音频/视频已暂停时</td>
+</tr>
+<tr>
+<td>play</td>
+<td>当音频/视频已开始或不再暂停时</td>
+</tr>
+<tr>
+<td>playing</td>
+<td>当音频/视频在已因缓冲而暂停或停止后已就绪时</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>当浏览器正在下载音频/视频时</td>
+</tr>
+<tr>
+<td>ratechange</td>
+<td>当音频/视频的播放速度已更改时</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>当用户已移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>当用户开始移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>stalled</td>
+<td>当浏览器尝试获取媒体数据，但数据不可用时</td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>当浏览器刻意不获取媒体数据时</td>
+</tr>
+<tr>
+<td>timeupdate</td>
+<td>当目前的播放位置已更改时</td>
+</tr>
+<tr>
+<td>volumechange</td>
+<td>当音量已更改时</td>
+</tr>
+<tr>
+<td>waiting</td>
+<td>当视频由于需要缓冲下一帧而停止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="细节注意"><a href="#细节注意" class="headerlink" title="细节注意"></a>细节注意</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*全屏操作后  自带的控制栏会显示  在显示的时候隐藏*/</span></span><br><span class="line"><span class="selector-tag">video</span><span class="selector-pseudo">::-webkit-media-controls</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.controls</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">700px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.2);</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">350px</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="comment">/*比全屏的状态下的视频元素高*/</span></span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">100000000000</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>需求驱动开发者使用什么API</p>
 
       
     </div>
@@ -329,13 +568,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/13/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/14/07-自定义播放器/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">崔家丶聪少</a></p>
-        <p><span>发布时间:</span>2018-11-13, 10:51:32</p>
-        <p><span>最后更新:</span>2018-11-13, 10:51:32</p>
+        <p><span>发布时间:</span>2018-11-14, 20:50:15</p>
+        <p><span>最后更新:</span>2018-03-07, 11:40:42</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/13/hello-world/" title="Hello World">http://yoursite.com/2018/11/13/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/13/hello-world/　　作者: 崔家丶聪少" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/14/07-自定义播放器/" title="">http://yoursite.com/2018/11/14/07-自定义播放器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/14/07-自定义播放器/　　作者: 崔家丶聪少" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -348,11 +587,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/14/01-关于H5开发/">
+                <a href="/2018/11/14/09-本地存储/">
                     
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/14/06-全屏操作/">
+                    
+                </a>
+            </div>
         
     </nav>
 
@@ -362,7 +607,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义播放器"><span class="toc-number">1.</span> <span class="toc-text">自定义播放器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-number">1.1.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识内容"><span class="toc-number">1.2.</span> <span class="toc-text">知识内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#api"><span class="toc-number">1.2.1.</span> <span class="toc-text">api</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#细节注意"><span class="toc-number">1.2.2.</span> <span class="toc-text">细节注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -398,7 +643,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| 崔家丶聪少的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| 崔家丶聪少的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -418,7 +663,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/14/01-关于H5开发/" title="上一篇: ">
+            <a href="/2018/11/14/09-本地存储/" title="上一篇: ">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -426,7 +671,9 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/11/14/06-全屏操作/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
