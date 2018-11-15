@@ -279,10 +279,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-10-拖拽上传" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-08-历史浏览记录" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/14/10-拖拽上传/" class="article-date">
+      <a href="/2018/11/14/08-历史浏览记录/" class="article-date">
       <time datetime="2018-11-14T12:50:15.704Z" itemprop="datePublished">2018-11-14</time>
 </a>
 
@@ -297,32 +297,32 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="拖拽上传"><a href="#拖拽上传" class="headerlink" title="拖拽上传"></a>拖拽上传</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>掌握并使用拖拽事件</li>
-<li>结合拖拽事件完成拖拽上传</li>
+        <h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握新增API的使用</li>
+<li>理解在单页面应用程序的使用</li>
 </ul>
-<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h3><ul>
-<li>拖拽元素<ul>
-<li>ondrag     应用于拖拽元素，整个拖拽过程都会调用<ul>
-<li>ondragstart应用于拖拽元素，当拖拽开始时调用</li>
-<li>ondragleave应用于拖拽元素，当鼠标离开拖拽元素时调用</li>
-<li>ondragend应用于拖拽元素，当拖拽结束时调用</li>
+<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="解释API"><a href="#解释API" class="headerlink" title="解释API"></a>解释API</h3><ul>
+<li><p><code>pushState(data, title, url)</code> 追加一条历史记录  </p>
+<ul>
+<li><p>data用于存储自定义数据，通常设为null</p>
+<ul>
+<li>title历史记录标题，基本上没有被支持，一般设为空</li>
 </ul>
+<p>​+ url 以当前域为基础增加一条历史记录，不可跨域设置</p>
 </li>
 </ul>
 </li>
-<li>目标元素<ul>
-<li>ondragenter应用于目标元素，当拖拽元素进入时调用<ul>
-<li>ondragover应用于目标元素，当停留在目标元素上时调用</li>
-<li>ondrop应用于目标元素，当在目标元素上松开鼠标时调用</li>
-<li>ondragleave应用于目标元素，当鼠标离开目标元素时调用</li>
-</ul>
+<li><p><code>replaceState(data, title, url)</code> 与pushState()基本相同，<br>不同之处在于replaceState()，只是替换当前url，不会增加/减少历史记录。</p>
+</li>
+<li><p><code>popstate</code>事件，当前进或后退时则触发  </p>
 </li>
 </ul>
-</li>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>在单页面应用程序中，改变地址栏，不发生跳转，使用异步更新网页局部内容</li>
+<li>在单页面应用程序中，回退前进历史的时候，更新网页局部内容</li>
+<li>常用在对用户体验性能要求较高，有需要去满足SEO的网站</li>
 </ul>
-<h3 id="拖拽上传-1"><a href="#拖拽上传-1" class="headerlink" title="拖拽上传"></a>拖拽上传</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">dashed</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>拖放图片到该区域<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'dragenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*禁用浏览器默认预览文件或下载文件操作*/</span></span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'dragover'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*禁用浏览器默认预览文件或下载文件操作*/</span></span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'drop'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*第一个文件数据*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> file = e.dataTransfer.files[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">        <span class="comment">//console.log(file);</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">/*把数据设置到表单数据中*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span></span><br><span class="line"><span class="javascript">        formData.append(<span class="string">'dragImage'</span>, file);</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*通过ajax异步提交*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        xhr.open(<span class="string">'post'</span>,<span class="string">'upload.php'</span>);</span></span><br><span class="line"><span class="undefined">        xhr.send(formData);</span></span><br><span class="line"><span class="javascript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">/*上传成功*/</span></span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'ok'</span>);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span></span><br><span class="line"><span class="undefined">                img.src = xhr.responseText;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>).appendChild(img);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在支持H5的浏览器中可使用拖拽上传</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在淘宝的搜索页使用这个技术 ，很好的提高了用户体验</p>
 
       
     </div>
@@ -445,10 +445,10 @@
 
 
   
-    <article id="post-08-历史浏览记录" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-10-拖拽上传" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/14/08-历史浏览记录/" class="article-date">
+      <a href="/2018/11/14/10-拖拽上传/" class="article-date">
       <time datetime="2018-11-14T12:50:15.704Z" itemprop="datePublished">2018-11-14</time>
 </a>
 
@@ -463,32 +463,32 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>掌握新增API的使用</li>
-<li>理解在单页面应用程序的使用</li>
+        <h1 id="拖拽上传"><a href="#拖拽上传" class="headerlink" title="拖拽上传"></a>拖拽上传</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握并使用拖拽事件</li>
+<li>结合拖拽事件完成拖拽上传</li>
 </ul>
-<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="解释API"><a href="#解释API" class="headerlink" title="解释API"></a>解释API</h3><ul>
-<li><p><code>pushState(data, title, url)</code> 追加一条历史记录  </p>
-<ul>
-<li><p>data用于存储自定义数据，通常设为null</p>
-<ul>
-<li>title历史记录标题，基本上没有被支持，一般设为空</li>
+<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h3><ul>
+<li>拖拽元素<ul>
+<li>ondrag     应用于拖拽元素，整个拖拽过程都会调用<ul>
+<li>ondragstart应用于拖拽元素，当拖拽开始时调用</li>
+<li>ondragleave应用于拖拽元素，当鼠标离开拖拽元素时调用</li>
+<li>ondragend应用于拖拽元素，当拖拽结束时调用</li>
 </ul>
-<p>​+ url 以当前域为基础增加一条历史记录，不可跨域设置</p>
+</li>
+</ul>
+</li>
+<li>目标元素<ul>
+<li>ondragenter应用于目标元素，当拖拽元素进入时调用<ul>
+<li>ondragover应用于目标元素，当停留在目标元素上时调用</li>
+<li>ondrop应用于目标元素，当在目标元素上松开鼠标时调用</li>
+<li>ondragleave应用于目标元素，当鼠标离开目标元素时调用</li>
+</ul>
 </li>
 </ul>
 </li>
-<li><p><code>replaceState(data, title, url)</code> 与pushState()基本相同，<br>不同之处在于replaceState()，只是替换当前url，不会增加/减少历史记录。</p>
-</li>
-<li><p><code>popstate</code>事件，当前进或后退时则触发  </p>
-</li>
 </ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>在单页面应用程序中，改变地址栏，不发生跳转，使用异步更新网页局部内容</li>
-<li>在单页面应用程序中，回退前进历史的时候，更新网页局部内容</li>
-<li>常用在对用户体验性能要求较高，有需要去满足SEO的网站</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在淘宝的搜索页使用这个技术 ，很好的提高了用户体验</p>
+<h3 id="拖拽上传-1"><a href="#拖拽上传-1" class="headerlink" title="拖拽上传"></a>拖拽上传</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">dashed</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>拖放图片到该区域<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'dragenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*禁用浏览器默认预览文件或下载文件操作*/</span></span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'dragover'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*禁用浏览器默认预览文件或下载文件操作*/</span></span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="javascript">    box.addEventListener(<span class="string">'drop'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*第一个文件数据*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> file = e.dataTransfer.files[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">        <span class="comment">//console.log(file);</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">/*把数据设置到表单数据中*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span></span><br><span class="line"><span class="javascript">        formData.append(<span class="string">'dragImage'</span>, file);</span></span><br><span class="line"><span class="javascript">        <span class="comment">/*通过ajax异步提交*/</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">        xhr.open(<span class="string">'post'</span>,<span class="string">'upload.php'</span>);</span></span><br><span class="line"><span class="undefined">        xhr.send(formData);</span></span><br><span class="line"><span class="javascript">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">/*上传成功*/</span></span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'ok'</span>);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span></span><br><span class="line"><span class="undefined">                img.src = xhr.responseText;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>).appendChild(img);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在支持H5的浏览器中可使用拖拽上传</p>
 
       
     </div>
@@ -885,6 +885,60 @@
 
 
   
+    <article id="post-05-dom扩展" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/14/05-dom扩展/" class="article-date">
+      <time datetime="2018-11-14T12:50:15.610Z" itemprop="datePublished">2018-11-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="dom扩展"><a href="#dom扩展" class="headerlink" title="dom扩展"></a>dom扩展</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>能够使用H5扩展API完成页面效果</li>
+</ul>
+<h2 id="扩展内容"><a href="#扩展内容" class="headerlink" title="扩展内容"></a>扩展内容</h2><h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName (<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//通过类名获取元素，以伪数组形式存在。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'selector'</span>);</span><br><span class="line"><span class="comment">//通过CSS选择器获取元素，符合匹配条件的第1个元素。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">'selector'</span>); </span><br><span class="line"><span class="comment">//通过CSS选择器获取元素，以伪数组形式存在。</span></span><br></pre></td></tr></table></figure>
+<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Node.classList.add(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//添加class</span></span><br><span class="line"></span><br><span class="line">Node.classList.remove(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//移除class</span></span><br><span class="line"></span><br><span class="line">Node.classList.toggle(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//切换class，有则移除，无则添加</span></span><br><span class="line"></span><br><span class="line">Node.classList.contains(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//检测是否存在class</span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><blockquote>
+<p>在HTML5中我们可以自定义属性，其格式如下data-*=””</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">data-my-name</span>=<span class="string">"itcast"</span> <span class="attr">data-age</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--1. 大家理解的自定义属性：自己定义的属性--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2. 非标准属性：就是自定义属性--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3. 像：name class id title alt 标准属性  反之 非标准--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--H5规范 用来存储数据的属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--4. 以 data- 开始的属性认为是自定义属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--5. 操作自定义属性注意些：--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--6. dataset对象 指定的是当前dom元素上的自定义属性的集合 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--7. 获取自定义属性：dataset.属性名称 dataset[属性名称] --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--8. 设置自定义属性： dataset.属性名称 = 属性值   dataset[属性名称] = 属性值 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--9. 自定义属性的名称遵从驼峰命名 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--10. dom上的属性的定义 不支持大写 写了也转换成小写--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/*</span></span><br><span class="line"><span class="undefined">  Node.dataset是以对象形式存在的，当我们为同一个DOM节点指定了多个自定义属性时，</span></span><br><span class="line"><span class="undefined">  Node.dataset则存储了所有的自定义属性的值。</span></span><br><span class="line"><span class="undefined">  */</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> demo = <span class="built_in">document</span>.querySelector(反馈);</span></span><br><span class="line"><span class="javascript"><span class="comment">//获取</span></span></span><br><span class="line"><span class="javascript"><span class="comment">//注：当我们如下格式设置时，则需要以驼峰格式才能正确获取</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> name = demo.dataset[<span class="string">'myName'</span>];</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> age = demo.dataset[<span class="string">'age'</span>];</span></span><br><span class="line"><span class="javascript"><span class="comment">//设置</span></span></span><br><span class="line"><span class="javascript">demo.dataset[<span class="string">'name'</span>] = <span class="string">'web developer'</span>;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在不使用第三方库的情况下，使用最便捷的方式操作DOM，完成页面效果</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-04-fullpage" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -1226,11 +1280,11 @@
 
 
   
-    <article id="post-05-dom扩展" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-03-3d转换" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/14/05-dom扩展/" class="article-date">
-      <time datetime="2018-11-14T12:50:15.610Z" itemprop="datePublished">2018-11-14</time>
+      <a href="/2018/11/14/03-3d转换/" class="article-date">
+      <time datetime="2018-11-14T12:50:15.595Z" itemprop="datePublished">2018-11-14</time>
 </a>
 
 
@@ -1244,16 +1298,73 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="dom扩展"><a href="#dom扩展" class="headerlink" title="dom扩展"></a>dom扩展</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>能够使用H5扩展API完成页面效果</li>
+        <h1 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握使用CSS完成一些3d效果</li>
+<li>理解在网页平面内的3d效果</li>
 </ul>
-<h2 id="扩展内容"><a href="#扩展内容" class="headerlink" title="扩展内容"></a>扩展内容</h2><h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName (<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//通过类名获取元素，以伪数组形式存在。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'selector'</span>);</span><br><span class="line"><span class="comment">//通过CSS选择器获取元素，符合匹配条件的第1个元素。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">'selector'</span>); </span><br><span class="line"><span class="comment">//通过CSS选择器获取元素，以伪数组形式存在。</span></span><br></pre></td></tr></table></figure>
-<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Node.classList.add(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//添加class</span></span><br><span class="line"></span><br><span class="line">Node.classList.remove(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//移除class</span></span><br><span class="line"></span><br><span class="line">Node.classList.toggle(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//切换class，有则移除，无则添加</span></span><br><span class="line"></span><br><span class="line">Node.classList.contains(<span class="string">'class'</span>); </span><br><span class="line"><span class="comment">//检测是否存在class</span></span><br></pre></td></tr></table></figure>
-<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><blockquote>
-<p>在HTML5中我们可以自定义属性，其格式如下data-*=””</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">data-my-name</span>=<span class="string">"itcast"</span> <span class="attr">data-age</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--1. 大家理解的自定义属性：自己定义的属性--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2. 非标准属性：就是自定义属性--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3. 像：name class id title alt 标准属性  反之 非标准--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--H5规范 用来存储数据的属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--4. 以 data- 开始的属性认为是自定义属性 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--5. 操作自定义属性注意些：--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--6. dataset对象 指定的是当前dom元素上的自定义属性的集合 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--7. 获取自定义属性：dataset.属性名称 dataset[属性名称] --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--8. 设置自定义属性： dataset.属性名称 = 属性值   dataset[属性名称] = 属性值 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--9. 自定义属性的名称遵从驼峰命名 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--10. dom上的属性的定义 不支持大写 写了也转换成小写--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/*</span></span><br><span class="line"><span class="undefined">  Node.dataset是以对象形式存在的，当我们为同一个DOM节点指定了多个自定义属性时，</span></span><br><span class="line"><span class="undefined">  Node.dataset则存储了所有的自定义属性的值。</span></span><br><span class="line"><span class="undefined">  */</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> demo = <span class="built_in">document</span>.querySelector(反馈);</span></span><br><span class="line"><span class="javascript"><span class="comment">//获取</span></span></span><br><span class="line"><span class="javascript"><span class="comment">//注：当我们如下格式设置时，则需要以驼峰格式才能正确获取</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> name = demo.dataset[<span class="string">'myName'</span>];</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> age = demo.dataset[<span class="string">'age'</span>];</span></span><br><span class="line"><span class="javascript"><span class="comment">//设置</span></span></span><br><span class="line"><span class="javascript">demo.dataset[<span class="string">'name'</span>] = <span class="string">'web developer'</span>;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在不使用第三方库的情况下，使用最便捷的方式操作DOM，完成页面效果</p>
+<h2 id="怎么在网页平面产生3d效果"><a href="#怎么在网页平面产生3d效果" class="headerlink" title="怎么在网页平面产生3d效果"></a>怎么在网页平面产生3d效果</h2><ul>
+<li>我们生活的环境是3d的，照片就是3d物体在2d平面呈现的例子</li>
+<li>有什么特点：<ul>
+<li>近大远小</li>
+<li>物体后面遮挡不可见</li>
+</ul>
+</li>
+<li>当我们在网页上构建3d效果的时候参考这些特点就能产出3d效果</li>
+<li>在现实生活当中 我们通过肉眼去物体的时候和照片的成像是相同的</li>
+<li>如果想要在网页产生3d效果需要透视（理解成3d物体投影在2d平面内）</li>
+</ul>
+<h2 id="透视和视距"><a href="#透视和视距" class="headerlink" title="透视和视距"></a>透视和视距</h2><ul>
+<li><p>透视（perspective）</p>
+<ul>
+<li>在2d平面产生近大远小视觉立体，但是只是效果二维的</li>
+<li>原理：<br><img src="media/01.png"><br>a. 模拟人类的视觉位置，可认为安排一只眼睛去看<br>b. 距离电脑平面的距离为视距<br>c. 距离视觉点越近的在电脑平面成像越大，越远成像越远  </li>
+<li>特点：只是显示3d图像的近大远小效果，无法呈现3d的三维成像的特点，如遮挡</li>
+<li><p>使用场景：只是辅助性的帮助开发者检查3d效果</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3d转换"><a href="#3d转换" class="headerlink" title="3d转换"></a>3d转换</h2><ul>
+<li><code>translateX</code>  x轴方向的位移</li>
+<li><code>translateY</code>  y轴方向的位移</li>
+<li><code>translateZ</code> z轴方向的位移</li>
+<li><code>rotateX</code> 绕x轴旋转</li>
+<li><code>rotateY</code> 绕y轴旋转</li>
+<li><code>rotateZ</code> 绕z轴旋转 </li>
+</ul>
+<h2 id="3d呈现"><a href="#3d呈现" class="headerlink" title="3d呈现"></a>3d呈现</h2><ul>
+<li>3d呈现（transfrom-style）<ul>
+<li>在2d平面产生近大远小视觉立体，但是只是效果二维的</li>
+<li>原理：<br><img src="media/02.png"> <img src="media/03.png"><br>a. 第一张图是没有使用3d呈现的  无3d效果<br>b. 第二张图是使用了3d呈现的  出现遮挡三维立体效果</li>
+<li>特点：真正意义的3d呈现，三维立体,有遮挡</li>
+<li>使用场景：在3d立体图形的构建使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="css">            <span class="comment">/*辅助3d效果开发  视觉效果 */</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*透视：理解成在屏幕外面安排一只眼睛帮我们开3d效果*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/* 形成近大远小 效果  */</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*perspective: 300px;*/</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">            <span class="comment">/*真正意义的3D呈现 */</span></span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            transform: rotateX(30deg) rotateY(-30deg);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            animation: rotate 4s linear infinite;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &gt; <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: 0<span class="selector-class">.4</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.front</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: red;</span></span><br><span class="line"><span class="undefined">            transform: translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.back</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: blue;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-180deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: green;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.right</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: yellow;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-270deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.top</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: pink;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.bottom</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: hotpink;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(-90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 立方体的中心在电脑平面上  */</span></span></span><br><span class="line"><span class="css">        <span class="comment">/* 当你选择过后正面朝外 Z正方向也是朝外 */</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> rotate &#123;</span></span><br><span class="line"><span class="undefined">            from&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            to&#123;</span></span><br><span class="line"><span class="undefined">                transform: rotateX(30deg) rotateY(-390deg);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>front<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"back"</span>&gt;</span>back<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span>top<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>bottom<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>怎么在2d的网页体现3d效果<ul>
+<li>拍照片  物体 呈现 近大远小</li>
+<li>在网页 也可以安排一只虚拟的眼睛  帮我们去观察 立体的物体</li>
+</ul>
+</li>
+<li>透视<ul>
+<li>perspective:100px;</li>
+<li>视距  距离越近 近大远小的效果 越明显</li>
+<li>作用：辅助观察3d效果，不能真正的呈现3d</li>
+</ul>
+</li>
+<li>3d转换<ul>
+<li>rotateX</li>
+<li>rotateY</li>
+<li>rotateZ</li>
+<li>translateX</li>
+<li>translateY</li>
+<li>translateZ</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -1346,117 +1457,6 @@
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> animationName &#123;</span><br><span class="line">  <span class="selector-tag">form</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>:<span class="number">200px</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* animationName 动画序列名称 */</span></span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>css3知识非常繁杂属性较多，无需刻意去记忆，一定要多使用。</strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-03-3d转换" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/14/03-3d转换/" class="article-date">
-      <time datetime="2018-11-14T12:50:15.595Z" itemprop="datePublished">2018-11-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>掌握使用CSS完成一些3d效果</li>
-<li>理解在网页平面内的3d效果</li>
-</ul>
-<h2 id="怎么在网页平面产生3d效果"><a href="#怎么在网页平面产生3d效果" class="headerlink" title="怎么在网页平面产生3d效果"></a>怎么在网页平面产生3d效果</h2><ul>
-<li>我们生活的环境是3d的，照片就是3d物体在2d平面呈现的例子</li>
-<li>有什么特点：<ul>
-<li>近大远小</li>
-<li>物体后面遮挡不可见</li>
-</ul>
-</li>
-<li>当我们在网页上构建3d效果的时候参考这些特点就能产出3d效果</li>
-<li>在现实生活当中 我们通过肉眼去物体的时候和照片的成像是相同的</li>
-<li>如果想要在网页产生3d效果需要透视（理解成3d物体投影在2d平面内）</li>
-</ul>
-<h2 id="透视和视距"><a href="#透视和视距" class="headerlink" title="透视和视距"></a>透视和视距</h2><ul>
-<li><p>透视（perspective）</p>
-<ul>
-<li>在2d平面产生近大远小视觉立体，但是只是效果二维的</li>
-<li>原理：<br><img src="media/01.png"><br>a. 模拟人类的视觉位置，可认为安排一只眼睛去看<br>b. 距离电脑平面的距离为视距<br>c. 距离视觉点越近的在电脑平面成像越大，越远成像越远  </li>
-<li>特点：只是显示3d图像的近大远小效果，无法呈现3d的三维成像的特点，如遮挡</li>
-<li><p>使用场景：只是辅助性的帮助开发者检查3d效果</p>
-<p>​</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="3d转换"><a href="#3d转换" class="headerlink" title="3d转换"></a>3d转换</h2><ul>
-<li><code>translateX</code>  x轴方向的位移</li>
-<li><code>translateY</code>  y轴方向的位移</li>
-<li><code>translateZ</code> z轴方向的位移</li>
-<li><code>rotateX</code> 绕x轴旋转</li>
-<li><code>rotateY</code> 绕y轴旋转</li>
-<li><code>rotateZ</code> 绕z轴旋转 </li>
-</ul>
-<h2 id="3d呈现"><a href="#3d呈现" class="headerlink" title="3d呈现"></a>3d呈现</h2><ul>
-<li>3d呈现（transfrom-style）<ul>
-<li>在2d平面产生近大远小视觉立体，但是只是效果二维的</li>
-<li>原理：<br><img src="media/02.png"> <img src="media/03.png"><br>a. 第一张图是没有使用3d呈现的  无3d效果<br>b. 第二张图是使用了3d呈现的  出现遮挡三维立体效果</li>
-<li>特点：真正意义的3d呈现，三维立体,有遮挡</li>
-<li>使用场景：在3d立体图形的构建使用</li>
-</ul>
-</li>
-</ul>
-<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            position: relative;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="css">            <span class="comment">/*辅助3d效果开发  视觉效果 */</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*透视：理解成在屏幕外面安排一只眼睛帮我们开3d效果*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/* 形成近大远小 效果  */</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*perspective: 300px;*/</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">            <span class="comment">/*真正意义的3D呈现 */</span></span></span><br><span class="line"><span class="undefined">            transform-style: preserve-3d;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            transform: rotateX(30deg) rotateY(-30deg);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            animation: rotate 4s linear infinite;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &gt; <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            position: absolute;</span></span><br><span class="line"><span class="undefined">            left: 0;</span></span><br><span class="line"><span class="undefined">            top: 0;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            line-height: 200px;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: 0<span class="selector-class">.4</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.front</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: red;</span></span><br><span class="line"><span class="undefined">            transform: translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.back</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: blue;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-180deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: green;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.right</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: yellow;</span></span><br><span class="line"><span class="undefined">            transform: rotateY(-270deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.top</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: pink;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> <span class="selector-class">.bottom</span>&#123;</span></span><br><span class="line"><span class="undefined">            background: hotpink;</span></span><br><span class="line"><span class="undefined">            transform: rotateX(-90deg) translateZ(100px);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 立方体的中心在电脑平面上  */</span></span></span><br><span class="line"><span class="css">        <span class="comment">/* 当你选择过后正面朝外 Z正方向也是朝外 */</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        @<span class="keyword">keyframes</span> rotate &#123;</span></span><br><span class="line"><span class="undefined">            from&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            to&#123;</span></span><br><span class="line"><span class="undefined">                transform: rotateX(30deg) rotateY(-390deg);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"front"</span>&gt;</span>front<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"back"</span>&gt;</span>back<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span>top<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span>bottom<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>怎么在2d的网页体现3d效果<ul>
-<li>拍照片  物体 呈现 近大远小</li>
-<li>在网页 也可以安排一只虚拟的眼睛  帮我们去观察 立体的物体</li>
-</ul>
-</li>
-<li>透视<ul>
-<li>perspective:100px;</li>
-<li>视距  距离越近 近大远小的效果 越明显</li>
-<li>作用：辅助观察3d效果，不能真正的呈现3d</li>
-</ul>
-</li>
-<li>3d转换<ul>
-<li>rotateX</li>
-<li>rotateY</li>
-<li>rotateZ</li>
-<li>translateX</li>
-<li>translateY</li>
-<li>translateZ</li>
-</ul>
-</li>
-</ul>
 
       
     </div>
