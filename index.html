@@ -349,76 +349,6 @@
 
 
   
-    <article id="post-08-历史浏览记录" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/11/14/08-历史浏览记录/" class="article-date">
-      <time datetime="2018-11-14T12:50:15.704Z" itemprop="datePublished">2018-11-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>掌握新增API的使用</li>
-<li>理解在单页面应用程序的使用</li>
-</ul>
-<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="解释API"><a href="#解释API" class="headerlink" title="解释API"></a>解释API</h3><ul>
-<li><p><code>pushState(data, title, url)</code> 追加一条历史记录  </p>
-<ul>
-<li><p>data用于存储自定义数据，通常设为null</p>
-<ul>
-<li>title历史记录标题，基本上没有被支持，一般设为空</li>
-</ul>
-<p>​+ url 以当前域为基础增加一条历史记录，不可跨域设置</p>
-</li>
-</ul>
-</li>
-<li><p><code>replaceState(data, title, url)</code> 与pushState()基本相同，<br>不同之处在于replaceState()，只是替换当前url，不会增加/减少历史记录。</p>
-</li>
-<li><p><code>popstate</code>事件，当前进或后退时则触发  </p>
-</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>在单页面应用程序中，改变地址栏，不发生跳转，使用异步更新网页局部内容</li>
-<li>在单页面应用程序中，回退前进历史的时候，更新网页局部内容</li>
-<li>常用在对用户体验性能要求较高，有需要去满足SEO的网站</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在淘宝的搜索页使用这个技术 ，很好的提高了用户体验</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-09-本地存储" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -489,6 +419,76 @@
 </tr>
 </tbody>
 </table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-08-历史浏览记录" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/14/08-历史浏览记录/" class="article-date">
+      <time datetime="2018-11-14T12:50:15.704Z" itemprop="datePublished">2018-11-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握新增API的使用</li>
+<li>理解在单页面应用程序的使用</li>
+</ul>
+<h2 id="知识内容"><a href="#知识内容" class="headerlink" title="知识内容"></a>知识内容</h2><h3 id="解释API"><a href="#解释API" class="headerlink" title="解释API"></a>解释API</h3><ul>
+<li><p><code>pushState(data, title, url)</code> 追加一条历史记录  </p>
+<ul>
+<li><p>data用于存储自定义数据，通常设为null</p>
+<ul>
+<li>title历史记录标题，基本上没有被支持，一般设为空</li>
+</ul>
+<p>​+ url 以当前域为基础增加一条历史记录，不可跨域设置</p>
+</li>
+</ul>
+</li>
+<li><p><code>replaceState(data, title, url)</code> 与pushState()基本相同，<br>不同之处在于replaceState()，只是替换当前url，不会增加/减少历史记录。</p>
+</li>
+<li><p><code>popstate</code>事件，当前进或后退时则触发  </p>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>在单页面应用程序中，改变地址栏，不发生跳转，使用异步更新网页局部内容</li>
+<li>在单页面应用程序中，回退前进历史的时候，更新网页局部内容</li>
+<li>常用在对用户体验性能要求较高，有需要去满足SEO的网站</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在淘宝的搜索页使用这个技术 ，很好的提高了用户体验</p>
 
       
     </div>
